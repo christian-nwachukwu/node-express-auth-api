@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import helmet from "helmet";
 import mongoose from "mongoose";
-//import route from "./routes/userRoute.js";
+import authRouter from "./routers/authRouter.js";
 
 //initialize express app
 const app = express();
@@ -40,4 +40,4 @@ mongoose
 .catch((error) => console.log(error));
 
 //create api endpoint
-//app.use("/api/user", route);
+app.use("/api/auth", authRouter);
